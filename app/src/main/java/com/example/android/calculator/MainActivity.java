@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Button percentage, ac, clear, delete, divide, multiply, subtract, add, equal;
     TextView zero, one, two, three, four, five, six, seven, eight, nine;
     TextView show, result;
+    Button bm1, bm, bm2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
         seven = findViewById(R.id.seven);
         eight = findViewById(R.id.eight);
         nine = findViewById(R.id.nine);
+
+        bm1 = findViewById(R.id.bm1);
+        bm = findViewById(R.id.bm);
+        bm2 = findViewById(R.id.bm2);
 
         result = findViewById(R.id.result);
         show = findViewById(R.id.show);
@@ -487,11 +492,33 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 result.setText("");
-                show.setText("0");
+                show.setText(String.valueOf(ans));
 
             }
         });
 
+        bm1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ++ans;
+                result.append("+1");
+                show.setText(String.valueOf(ans));
+            }
+        });
+        bm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result.setText(String.valueOf(ans));
+            }
+        });
+        bm2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                --ans;
+                result.append("-1");
+                show.setText(String.valueOf(ans));
+            }
+        });
 
     }
 }
