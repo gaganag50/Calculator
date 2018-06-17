@@ -303,7 +303,7 @@ public class MainActivity extends AppCompatActivity {
                             if (i == 0) {
                                 Log.d(TAG, "onClick: ");
                                 j = i + 1;
-
+                                flag = 1;
                                 last = ch;
                                 continue;
                             }
